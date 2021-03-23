@@ -4,6 +4,13 @@ var app = new Vue({
     el: '#app',
 
     data: {
+        prefix: "img/avatar",
+        format: ".jpg",
+        myContact: {
+            name: "Edoardo",
+            avatar: "_io",
+            visible: true
+        },
         contacts: [{
                 name: 'Michele',
                 avatar: '_1',

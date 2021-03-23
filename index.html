@@ -12,24 +12,64 @@
     <title>Boolzapp</title>
 </head>
 
-<body id="app">
-    <div class="container">
+<body>
+    <div id="app" class="container">
         <section class="left_container">
             <div class="myUser_header header">
                 <div class="myUserSpecs">
-                    <div class="myUserImg"><img src="img/avatar_io.jpg" alt="Mio Avatar"></div>
+                    <div class="myUserImg"><img :src="prefix+myContact.avatar+format" alt="Mio Avatar"></div>
                     <div class="myUserName">
-                        <span>Mio username</span>
+                        <h2>{{myContact.name}}</h2>
                     </div>
                 </div>
-                <div class="littleNav"></div>
+                <div class="littleNav">
+                    <a href="#"><i class="fas fa-circle-notch"></i></a>
+                    <a href="#"><i class="fas fa-circle-notch"></i></a>
+                    <a href="#"><i class="fas fa-circle-notch"></i></a>
+
+                </div>
             </div>
-            <div class="notification"></div>
-            <div class="search_bar"></div>
-            <div class="users"></div>
+            <div class="notification clearfix">
+                <div class="notification_icon"> <i class="fas fa-bell-slash"></i></div>
+                <div class="notification_text">
+                    <h2>Ricevi notifiche</h2>
+                    <a href="#">Attiva notifiche</a>
+                </div>
+            </div>
+            <div class="search_bar">
+                <div class="bar">
+                    <i id="iconbar" class="fas fa-search"></i>
+                    <input placeholder="Cerca nella chat" type="text">
+                </div>
+            </div>
+            <div class="users">
+                <div v-for="(contact,index) in contacts" class="user_box">
+                    <div class="UserImg"><img :src="prefix+contact.avatar+format" alt=""></div>
+                    <div class="UserName">
+                        <h2>{{contact.name}}</h2>
+                    </div>
+                </div>
+
+            </div>
         </section>
         <section class="right_container">
-            <div class="otherUser_header header"></div>
+            <div class="otherUser_header header">
+                <div class="otherUserSpecs">
+                    <div class="otherUserImg"><img :src="prefix+contacts[0].avatar+format" alt="Mio Avatar"></div>
+                    <div class="otherUserName">
+                        <h2>{{contacts[0].name}}</h2>
+                        <p>Ultimo accesso</p>
+                    </div>
+                </div>
+                <div class="littleNav">
+                    <a href="#"><i class="fas fa-circle-notch"></i></a>
+                    <a href="#"><i class="fas fa-circle-notch"></i></a>
+                    <a href="#"><i class="fas fa-circle-notch"></i></a>
+
+                </div>
+            </div>
+            <div class="main_chat"></div>
+            <div class="footer_message"></div>
         </section>
 
     </div>

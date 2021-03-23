@@ -1,7 +1,15 @@
+/* //trasformare hover in headerusername */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.clearfix {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 body {
@@ -38,18 +46,101 @@ body {
     background-color: khaki;
 }
 
-.myUserSpecs {
+.myUser_header,
+.otherUser_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.myUserSpecs,
+.otherUserSpecs {
     justify-items: center;
     display: flex;
     height: 100%;
     padding: 5px;
 }
 
-.myUserImg {
+.myUserImg,
+.otherUserImg {
     height: 100%;
 }
 
-.myUserImg img {
+.myUserImg img,
+.otherUserImg img {
     height: 100%;
     border-radius: 50%;
+}
+
+.otherUserName h2 {
+    padding-left: 1px;
+}
+
+.littleNav {
+    padding-right: 5px;
+}
+
+.notification {
+    padding: 5px;
+    width: 100%;
+    height: 12%;
+    background-color: blue;
+}
+
+.notification_icon {
+    float: left;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.notification_icon i {
+    font-size: 30px;
+    padding: 10px;
+}
+
+.notification_text {
+    float: left;
+}
+
+.search_bar {
+    height: 5%;
+    background-color: teal;
+}
+
+.search_bar input {
+    width: 93%;
+}
+
+#iconbar {
+    width: 5%;
+    background-color: white;
+}
+
+.users {
+    overflow-y: scroll;
+    height: 73%;
+}
+
+.user_box {
+    height: 10%;
+}
+
+.UserImg {
+    height: 100%;
+    float: left;
+}
+
+.UserName {
+    padding-left: 70px;
+}
+
+.UserImg img {
+    border-radius: 50%;
+    height: 100%;
+}
+
+.main_chat {
+    width: 100%;
+    height: 83%;
+    background-image: url(../img/mine.jpg);
 }

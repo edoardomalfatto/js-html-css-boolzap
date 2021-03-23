@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    height: 90vh;
+    background-color: honeydew;
+}
+
+.left_container {
+    width: 40%;
+    height: 100%;
+    background-color: hotpink;
+}
+
+.right_container {
+    width: 60%;
+    height: 100%;
+    background-color: greenyellow;
+}
+
+.header {
+    height: 10%;
+    background-color: khaki;
+}
+
+.myUserSpecs {
+    justify-items: center;
+    display: flex;
+    height: 100%;
+    padding: 5px;
+}
+
+.myUserImg {
+    height: 100%;
+}
+
+.myUserImg img {
+    height: 100%;
+    border-radius: 50%;
+}

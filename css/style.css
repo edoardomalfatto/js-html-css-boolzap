@@ -143,4 +143,57 @@ body {
     width: 100%;
     height: 83%;
     background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+}
+
+.chat_container {
+    padding-top: 10%;
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.footer_message {
+    height: 7%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer_message input {
+    width: 80%;
+    height: 60%;
+    border-radius: 5px;
+}
+
+.received_message {
+    float: right;
+    padding: 10px;
+    width: 40%;
+    background-color: rgb(213, 249, 186);
+    border-radius: 10px;
+    margin-left: 60%;
+    margin-bottom: 10px;
+}
+
+.received_message span {
+    float: right;
+    font-size: 10px;
+    color: gray;
+}
+
+.sended_message {
+    float: left;
+    padding: 10px;
+    width: 40%;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 60%;
+    margin-bottom: 10px;
+}
+
+.sended_message span {
+    float: right;
+    font-size: 10px;
+    color: gray;
 }

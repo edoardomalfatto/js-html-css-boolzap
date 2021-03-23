@@ -68,8 +68,29 @@
 
                 </div>
             </div>
-            <div class="main_chat"></div>
-            <div class="footer_message"></div>
+            <div class="main_chat">
+                <div class="chat_container">
+                    <div class="received_message message">
+                        <p>{{contacts[0].messages[0].text}}</p>
+                        <span>{{contacts[0].messages[0].date}}</span>
+                    </div>
+
+                    <div class="received_message message">
+                        <p>{{contacts[0].messages[1].text}}</p>
+                        <span>{{contacts[0].messages[1].date}}</span>
+                    </div>
+
+                    <div class="sended_message message">
+                        <p>{{contacts[0].messages[2].text}}</p>
+                        <span>{{contacts[0].messages[2].date}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_message">
+                <i class="far fa-smile"></i>
+                <input placeholder="scrivi un messaggio" type="text">
+                <i class="fas fa-microphone"></i>
+            </div>
         </section>
 
     </div>

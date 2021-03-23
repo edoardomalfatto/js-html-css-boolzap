@@ -92,17 +92,7 @@ var app = new Vue({
             },
         ],
         methods: {
-            removeTask: function(index) {
-                this.doListArray.splice(index, 1);
-                console.log(this.doListArray);
-            },
-            addTask: function() {
-                console.log(this.newTask);
-                if (this.newTask != "") {
-                    this.doListArray.push(this.newTask);
-                    this.newTask = "";
-                }
-            }
+
         }
     }
 });

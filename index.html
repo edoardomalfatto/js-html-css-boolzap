@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -43,10 +43,11 @@
                 </div>
             </div>
             <div class="users">
-                <div v-for="(contact,index) in contacts" class="user_box">
+                <div v-for="(contact,index) in contacts" :class="(index==counter) ? active : null" @click="userClick(index)" class="user_box">
                     <div class="UserImg"><img :src="prefix+contact.avatar+format" alt=""></div>
                     <div class="UserName">
                         <h2>{{contact.name}}</h2>
+
                     </div>
                 </div>
 
@@ -55,9 +56,9 @@
         <section class="right_container">
             <div class="otherUser_header header">
                 <div class="otherUserSpecs">
-                    <div class="otherUserImg"><img :src="prefix+contacts[0].avatar+format" alt="Mio Avatar"></div>
+                    <div class="otherUserImg"><img :src="prefix+contacts[counter].avatar+format" alt="Mio Avatar"></div>
                     <div class="otherUserName">
-                        <h2>{{contacts[0].name}}</h2>
+                        <h2>{{contacts[counter].name}}</h2>
                         <p>Ultimo accesso</p>
                     </div>
                 </div>
@@ -70,7 +71,7 @@
             </div>
             <div class="main_chat">
                 <div class="chat_container">
-                    <div v-for="(message,index) in contacts[0].messages" class="received_message">
+                    <div v-for="(message,index) in contacts[counter].messages" :class="(message.status== sent) ? sended : recieved">
                         <p>{{message.text}}</p>
                         <span>{{message.date}}</span>
                     </div>
@@ -78,7 +79,7 @@
             </div>
             <div class="footer_message">
                 <i class="far fa-smile"></i>
-                <input placeholder="scrivi un messaggio" type="text">
+                <input placeholder="Scrivi un messaggio" type="text">
                 <i class="fas fa-microphone"></i>
             </div>
         </section>

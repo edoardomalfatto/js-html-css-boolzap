@@ -4,6 +4,11 @@ var app = new Vue({
     el: '#app',
 
     data: {
+        counter: 0,
+        active: "active",
+        sended: "sended_message",
+        recieved: "received_message",
+        sent: "sent",
         prefix: "img/avatar",
         format: ".jpg",
         myContact: {
@@ -90,9 +95,12 @@ var app = new Vue({
                     }
                 ],
             },
-        ],
-        methods: {
-
+        ]
+    },
+    methods: {
+        userClick: function(index) {
+            this.counter = index;
+            console.log(index);
         }
     }
 });

@@ -60,7 +60,8 @@
                     <div class="otherUserImg"><img :src="prefix+contacts[counter].avatar+format" alt="Mio Avatar"></div>
                     <div class="otherUserName">
                         <h2>{{contacts[counter].name}}</h2>
-                        <p>Ultimo accesso</p>
+                        <p v-show="isWriting">Sta Scrivendo...</p>
+                        <p v-if="isWriting==false">Ultimo accesso</p>
                     </div>
                 </div>
                 <div class="littleNav">

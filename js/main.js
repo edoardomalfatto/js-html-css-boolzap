@@ -5,6 +5,8 @@ var app = new Vue({
     el: '#app',
 
     data: {
+        isWriting: false,
+        lastAccess: "",
         newMessage: "",
         counter: 0,
         active: "active",
@@ -112,10 +114,24 @@ var app = new Vue({
                     status: 'sent'
                 });
                 this.newMessage = "";
+                this.answerMessage();
             }
+        },
+        answerMessage: function() {
+            this.isWriting = true;
+            setTimeout(() => {
+                this.contacts[this.counter].messages.push({
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    text: "ok",
+                    status: 'received'
+                });
+                this.isWriting = false;
+            }, 1000);
         }
     }
 });
+
+
 
 
 //Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” 

@@ -1,9 +1,11 @@
 Vue.config.devtools = true;
 
+
 var app = new Vue({
     el: '#app',
 
     data: {
+        newMessage: "",
         counter: 0,
         active: "active",
         sended: "sended_message",
@@ -101,6 +103,22 @@ var app = new Vue({
         userClick: function(index) {
             this.counter = index;
             console.log(index);
+        },
+        addMessage: function(counter) {
+            if (this.newMessage != "") {
+                this.contacts[counter].messages.push({
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    text: this.newMessage,
+                    status: 'sent'
+                });
+                this.newMessage = "";
+            }
         }
     }
 });
+
+
+//Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” 
+//il testo viene aggiunto al thread sopra, come messaggio verde
+//Risposta dall’interlocutore: ad ogni inserimento di un messaggio,
+// l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"></script>
     <title>Boolzapp</title>
 </head>
 
@@ -79,7 +80,7 @@
             </div>
             <div class="footer_message">
                 <i class="far fa-smile"></i>
-                <input placeholder="Scrivi un messaggio" type="text">
+                <input v-model="newMessage" v-on:keyup.enter="addMessage(counter)" placeholder="Scrivi un messaggio" type="text">
                 <i class="fas fa-microphone"></i>
             </div>
         </section>

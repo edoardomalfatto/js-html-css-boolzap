@@ -40,7 +40,7 @@
             <div class="search_bar">
                 <div class="bar">
                     <i id="iconbar" class="fas fa-search"></i>
-                    <input placeholder="Cerca nella chat" type="text">
+                    <input v-on:keyup.enter="searchingContact" v-model="searchContact" placeholder="Cerca nella chat" type="text">
                 </div>
             </div>
             <div class="users">

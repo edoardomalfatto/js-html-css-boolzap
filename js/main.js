@@ -5,6 +5,7 @@ var app = new Vue({
     el: '#app',
 
     data: {
+        searchContact: "",
         isWriting: false,
         lastAccess: "",
         newMessage: "",
@@ -102,6 +103,10 @@ var app = new Vue({
         ]
     },
     methods: {
+        searchingContact: function() {
+
+            this.searchContact = "";
+        },
         userClick: function(index) {
             this.counter = index;
             console.log(index);

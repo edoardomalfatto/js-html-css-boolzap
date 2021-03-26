@@ -40,11 +40,11 @@
             <div class="search_bar">
                 <div class="bar">
                     <i id="iconbar" class="fas fa-search"></i>
-                    <input v-on:keyup.enter="searchingContact" v-model="searchContact" placeholder="Cerca nella chat" type="text">
+                    <input v-on:keyup="searchingContact" v-model="searchContact" placeholder="Cerca nella chat" type="text">
                 </div>
             </div>
             <div class="users">
-                <div v-for="(contact,index) in contacts" :class="(index==counter) ? active : null" @click="userClick(index)" class="user_box">
+                <div v-for="(contact,index) in contacts" v-if="contact.visible" :class="(index==counter) ? active : null" @click="userClick(index)" class="user_box">
                     <div class="UserImg"><img :src="prefix+contact.avatar+format" alt=""></div>
                     <div class="UserName">
                         <h2>{{contact.name}}</h2>

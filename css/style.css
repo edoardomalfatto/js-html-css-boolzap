@@ -240,6 +240,7 @@ body {
 .received_message {
     float: right;
     clear: both;
+    overflow-wrap: break-word;
     padding: 10px;
     width: 40%;
     background-color: rgb(213, 249, 186);
@@ -256,6 +257,7 @@ body {
 .sended_message {
     float: left;
     clear: both;
+    overflow-wrap: break-word;
     padding: 10px;
     width: 40%;
     background-color: white;

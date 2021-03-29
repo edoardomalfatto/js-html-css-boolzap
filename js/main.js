@@ -133,7 +133,7 @@ var app = new Vue({
             searchingContact: function() {
                 for ((contact) of(this.contacts)) {
 
-                    if (this.searchContact != "" && contact.name.includes(this.capitalizeFirstLetter(this.searchContact)) == false) {
+                    if (this.searchContact != "" && contact.name.toLowerCase().includes(this.searchContact.toLowerCase()) == false) {
                         console.log(contact.visible);
                         contact.visible = false;
 
@@ -141,14 +141,10 @@ var app = new Vue({
                         contact.visible = true;
                     }
                 }
-            },
-            capitalizeFirstLetter: function(string) {
-                return string.charAt(0).toUpperCase() + string.slice(1);
             }
 
         }
-    },
-
+    }
     /*     created: function() {
             console.log(this.contacts);
             for ((contact) of(this.contacts)) {
